@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>MD Anwar</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <script type="text/javascript" src="js/jssor.slider.min.js"></script>
+    <script>
+        jssor_slider1_init = function () {
+            //Reference https://www.jssor.com/development/tip-make-responsive-slider.html
+
+            var options = {
+                $AutoPlay: 1,                                    //[Optional] Auto play or not, to enable slideshow, this option must be set to greater than 0. Default value is 0. 0: no auto play, 1: continuously, 2: stop at last slide, 4: stop on click, 8: stop on user navigation (by arrow/bullet/thumbnail/drag/arrow key navigation)
+                $DragOrientation: 3                                //[Optional] Orientation to drag slide, 0 no drag, 1 horizental, 2 vertical, 3 either, default value is 1 (Note that the $DragOrientation should be the same as $PlayOrientation when $Cols is greater than 1, or parking position is not 0),
+            };
+
+            var jssor_slider1 = new $JssorSlider$('slider1_container', options);
+            /*#region responsive code begin*/
+            //you can remove responsive code if you don't want the slider scales while window resizing
+            function ScaleSlider() {
+
+                //reserve blank width for margin+padding: margin+padding-left (10) + margin+padding-right (10)
+                var paddingWidth = 20;
+
+                //minimum width should reserve for text
+                var minReserveWidth = 150;
+
+                var parentElement = jssor_slider1.$Elmt.parentNode;
+
+                //evaluate parent container width
+                var parentWidth = parentElement.clientWidth;
+
+                if (parentWidth) {
+
+                    //exclude blank width
+                    var availableWidth = parentWidth - paddingWidth;
+
+                    //calculate slider width as 70% of available width
+                    var sliderWidth = availableWidth * 0.7;
+
+                    //slider width is maximum 600
+                    sliderWidth = Math.min(sliderWidth, 600);
+
+                    //slider width is minimum 200
+                    sliderWidth = Math.max(sliderWidth, 200);
+
+                    //evaluate free width for text, if the width is less than minReserveWidth then fill parent container
+                    if (availableWidth - sliderWidth < minReserveWidth) {
+
+                        //set slider width to available width
+                        sliderWidth = availableWidth;
+
+                        //slider width is minimum 200
+                        sliderWidth = Math.max(sliderWidth, 200);
+                    }
+
+                    jssor_slider1.$ScaleWidth(sliderWidth);
+                }
+                else
+                    $Jssor$.$Delay(ScaleSlider, 30);
+            }
+
+            ScaleSlider();
+            $Jssor$.$AddEvent(window, "load", ScaleSlider);
+
+            $Jssor$.$AddEvent(window, "resize", ScaleSlider);
+            $Jssor$.$AddEvent(window, "orientationchange", ScaleSlider);
+            /*#endregion responsive code end*/
+        };
+    </script>
+
+
+
+	<div class="divition1">
+		<div class="divition2">
+			<div class="web_header">
+				<div class="web_title">
+					<img src="img/logo.png" alt="">
+				</div>
+				<div class="manu_bar">
+					<ul>
+						<li><a href="about/index.html">About</a></li>
+						<li><a href="skills/index.html">Skills</a></li>
+						<li><a href="#">Services<i class="fa fa-angle-down"></i></a>
+							<ul>
+								<li><a href="services/index.html">HTML</a></li>
+								<li><a href="services/index.html">CSS</a></li>
+								<li><a href="services/index.html">javaScript</a></li>
+								<li><a href="services/index.html">jQuery</a></li>
+							</ul>
+						</li>
+						<li><a href="#">Exprience<i class="fa fa-angle-down"></i></a>
+							<ul>
+								<li><a href="ex/index.html">Auto CAD</a></li>
+								<li><a href="ex/index.html">Planing 2D</a></li>
+								<li><a href="ex/index.html">3D Design</a></li>
+								<li><a href="ex/index.html">Estimate</a></li>
+								<li><a href="ex/index.html">Freelancing</a></li>
+								<li><a href="ex/index.html">Markating</a></li>
+							</ul>
+						</li>
+						<li><a href="#">Gallary<i class="fa fa-angle-down"></i></a>
+							<ul>
+								<li><a href="gallary/index.html">Videos</a></li>
+								<li><a href="gallary/index.html">Audio</a></li>
+								<li><a href="gallary/index.html">Picture</a></li>
+							</ul>
+						</li>
+						<li><a href="contacts/index.html">Contact</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+			
+	<div class="divition11">
+		<div class="divition22">
+			<div class="content_1st">
+				<div class="left_section">
+					<div class="pfl_img">
+						<img src="img/picture2.jpg" alt="">
+					</div>
+					<div class="pfl_data">
+						<h2>General Information</h2>
+						<h6><i class="fa fa-edit"></i><span>Name : </span> MD Anwar</h6>
+						<h6><i class="fa fa-user-o"></i><span>Location : </span> Rajshahi BD</h6>
+						<h6><i class="fa fa-star-o"></i><span>Date of Birth : </span> August 27,1999</h6>
+					</div>
+					<div class="blank_div"></div>
+				</div>
+				<div class="right_section">
+					<div class="button_section">
+						<i class="fa fa-address-card-o"></i>
+						<h2>Available for freelance work</h2>
+					</div>
+					<div class="header_section">
+						<h3>HTML5 & CSS Designer</h3>
+						<h2>MD Anwar</h2>
+					</div>
+					<div class="discrib_section">
+							<h2>Description</h2>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus similique dolore velit magnam ratione nihil officia perferendis sint eius suscipit ex voluptatem eligendi voluptas quaerat libero fugit neque placeat eius, quidem reiciendis architecto cum error esse. Inventore, in, itaque.</p>
+							<div class="discrib_img">
+								<img src="img/picture3.jpg" alt="">
+							</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="divition000">
+		<div class="divition00">
+			<div class="content_2nd">
+				<div class="slider_left_section"></div>
+				<div class="slider_div_main">
+					<div id="slider1_container" class="slider_div_main1">
+						<div data-u="slides" class="slider_div_main2">
+							<div><img data-u="image" src="imgss/980x380/001.jpg"/></div>
+							<div><img data-u="image" src="imgss/980x380/002.jpg"/></div>
+							<div><img data-u="image" src="imgss/980x380/003.jpg"/></div>
+							<div><img data-u="image" src="imgss/980x380/004.jpg"/></div>
+						</div>
+						<script>
+							jssor_slider1_init();
+						</script>
+					</div>
+				</div>
+				<div class="slider_right_section"></div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="divition111">
+		<div class="divition222">
+			<div class="content_3rd">
+				<div class="c3_left_section">
+					<div class="contect_data">
+						<h2>Email</h2>
+						<h2>princeanowar272@gmail.com</h2>
+						<h2>Phone</h2>
+						<h2>01871076858</h2>
+						<h2>Find Me On</h2>
+					</div>
+					<div class="contect_icon">
+						<i class="fa fa-facebook-f"></i>
+						<i class="fa fa-twitter"></i>
+						<i class="fa fa-youtube"></i>
+						<i class="fa fa-google-plus"></i>
+					</div>
+				</div>
+				<div class="c3_right_section">
+					<div class="right_up_section">
+						<div class="sub_content_text">
+							<h2>LOVE YOU</h2>
+							<h3>Creative Director - Anwar</h3>
+							<h4>I'm Anwar Hossain,a huge HTML lover.A 20-year-old living in a small,but damn beautiful country called Bangladesh.</h4>
+						</div>
+					</div>
+					<div class="right_down_section">
+						<div class="last_img_section">
+							<img src="img/logo.png" alt="">
+						</div>
+						<div class="last_text_section">
+							<h2>If plan A didn't work,the alphabet has 25 more letters!</h2>
+						</div>
+					</div>
+				</div>
+				<div class="absulut_div">
+					<img src="img/600.gif" alt="">
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+
+
+
+</body>
+</html>
